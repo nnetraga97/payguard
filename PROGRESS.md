@@ -31,6 +31,7 @@ Milestone 1.0: prepare the ML/AI learning runway without implementing the user's
 - Added Phase 1 classical fraud scoring task brief, dataset registry, experiment log template, and model card template.
 - Added local-only Docker Compose support for Postgres and Redis under `infra/docker/compose.ml.yml`.
 - Verified the ML setup branch with `bash -n scripts/setup-ml-env.sh`, `docker compose -f infra/docker/compose.ml.yml config`, `python3` TOML parsing for `ml/pyproject.toml`, `git diff --check`, public-repo scan, and `mvn test`.
+- Fixed ML environment setup to choose Python `3.12` or `3.11` instead of an unsupported default `python3` when the default points at Python `3.14`.
 
 ## Open Review Comments
 
