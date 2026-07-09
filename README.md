@@ -13,4 +13,11 @@ Start with:
 
 ## Current Milestone
 
-Phase 0: prove zero-cost OCI constraints, then scaffold the local and OCI-ready project structure.
+Phase 0 / Phase 1 bridge: keep cloud at `$0`, preserve the Java transaction spine,
+and begin the local ML learning track.
+
+ML/AI implementation is intentionally user-owned. Start with:
+
+- `docs/ml/ml-ai-mentor-contract.md`
+- `docs/ml/phase-1-classical-fraud.md`
+- `ml/README.md`

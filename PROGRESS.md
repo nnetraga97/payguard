@@ -4,11 +4,11 @@ Last updated: 2026-07-09
 
 ## Current Phase
 
-Phase 0: Skeleton on OCI.
+Phase 0 / Phase 1 bridge: local-first ML setup while OCI remains unprovisioned.
 
 ## Current Milestone
 
-Milestone 0.1: prove zero-cost OCI constraints, then scaffold the local repo structure.
+Milestone 1.0: prepare the ML/AI learning runway without implementing the user's ML code.
 
 ## Completed
 
@@ -25,6 +25,13 @@ Milestone 0.1: prove zero-cost OCI constraints, then scaffold the local repo str
 - Started with the no-spend path by leaving OCI unprovisioned and scaffolding the local Spring Boot transaction simulator.
 - Added a Maven multi-module root and `apps/transaction-simulator` Spring Boot service with validation, actuator health, and controller tests.
 - Ran `mvn test`; 3 tests passed.
+- Added explicit ML/AI ownership rules: the user writes model, feature, evaluation, RAG, and MLOps implementation code; Codex scaffolds and reviews.
+- Added local ML workspace setup under `ml/`.
+- Added service contracts for `apps/fraud-scorer` and `apps/dispute-assistant` without implementations.
+- Added Phase 1 classical fraud scoring task brief, dataset registry, experiment log template, and model card template.
+- Added local-only Docker Compose support for Postgres and Redis under `infra/docker/compose.ml.yml`.
+- Verified the ML setup branch with `bash -n scripts/setup-ml-env.sh`, `docker compose -f infra/docker/compose.ml.yml config`, `python3` TOML parsing for `ml/pyproject.toml`, `git diff --check`, public-repo scan, and `mvn test`.
+- Fixed ML environment setup to choose Python `3.12` or `3.11` instead of an unsupported default `python3` when the default points at Python `3.14`.
 
 ## Open Review Comments
 
@@ -34,16 +41,20 @@ Milestone 0.1: prove zero-cost OCI constraints, then scaffold the local repo str
 
 ## Next Action
 
-Implement Milestone 0.2 transaction decision rules locally:
+Start Phase 1 classical fraud scoring as user-owned implementation:
 
-1. Read `docs/architecture/milestone-0-2-transaction-decision-rules.md`.
-2. Add deterministic authorization decision rules behind `POST /api/authorizations`.
-3. Add focused tests for approved, declined, and pending-review outcomes.
-4. Run `mvn test`.
-5. Keep OCI dry-run-only until we have fully reviewed public IPv4 and billing behavior.
+1. Read `docs/ml/ml-ai-mentor-contract.md`.
+2. Read `docs/ml/phase-1-classical-fraud.md`.
+3. Set up the local ML environment with `./scripts/setup-ml-env.sh`.
+4. Register the ULB dataset in `docs/ml/dataset-registry.md` without committing data.
+5. Create the first user-authored experiment files under `ml/experiments/phase-1-classical-fraud/`.
+6. Keep OCI dry-run-only until we have fully reviewed public IPv4 and billing behavior.
 
 ## Mentor Questions For The User
 
 - Why does the billing doc matter more than a raw service-limit availability number?
 - What resource would most likely break the `$0` constraint first: OCPU, memory, boot volume, public IP, logging, or egress?
 - Which Phase 0 services must be always-on, and which can be staged or run only during development?
+- Why is accuracy a poor primary metric for fraud detection under extreme class imbalance?
+- Which ULB features would be unavailable or suspicious in real-time issuer authorization?
+- What is more expensive in your first operating model: a false positive or a false negative, and why?
