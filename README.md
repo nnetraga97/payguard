@@ -1,0 +1,16 @@
+# PayGuard
+
+PayGuard is a staff-level learning project for building a payments fraud and dispute intelligence platform end to end.
+
+The repo is intentionally public and company-neutral. It will grow through reviewable milestones covering Java/Spring transaction simulation, Python fraud scoring, deep learning/NLP, GenAI/RAG, MLOps, cloud infrastructure, and security.
+
+Start with:
+
+- `AGENTS.md` for working rules.
+- `PAYGUARD_PLAN.md` for the durable roadmap.
+- `PROGRESS.md` for current milestone state.
+- `BUDGET.md` for cloud guardrails.
+
+## Current Milestone
+
+Phase 0: prove zero-cost OCI constraints, then scaffold the local and OCI-ready project structure.

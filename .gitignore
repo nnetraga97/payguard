@@ -1,0 +1,39 @@
+# Build output
+target/
+build/
+dist/
+.next/
+
+# Java
+.mvn/wrapper/maven-wrapper.jar
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+
+# Local secrets and environment
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.jks
+
+# Data and generated experiment output
+data/
+datasets/
+mlruns/
+notebooks/.ipynb_checkpoints/
