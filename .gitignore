@@ -36,7 +36,10 @@ node_modules/
 data/
 datasets/
 mlruns/
+ml/local-data/
+ml/mlruns/
 notebooks/.ipynb_checkpoints/
+ml/notebooks/.ipynb_checkpoints/
 
 # Local cloud provisioning state
 infra/oci/.payguard-oci-resources.env

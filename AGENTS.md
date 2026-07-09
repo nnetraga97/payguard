@@ -29,6 +29,13 @@ At the start of every substantive session:
 - Every milestone should include review questions on tradeoffs, failure modes, security, operational impact, and payments-domain analogs.
 - Keep the pace focused on interview and role ROI. Flag deep dives that are interesting but low return.
 
+## ML/AI Learning Ownership
+
+- The user writes ML and AI implementation code: EDA, preprocessing, feature engineering, model training, evaluation, thresholds, FastAPI scoring, PyTorch loops, fine-tuning, retrieval, prompts, guardrails, and MLOps gates.
+- Codex may set up scaffolding, docs, contracts, scripts, and review rubrics.
+- Codex may review, ask staff-level questions, debug after an attempt, or provide small hints.
+- Do not implement complete ML/AI pipelines unless the user explicitly says they are blocked after attempting the work.
+
 ## Budget And Cloud Guardrails
 
 - OCI is the permanent always-on home for PayGuard and must remain `$0`.

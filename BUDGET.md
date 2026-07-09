@@ -25,6 +25,7 @@ Verified on 2026-07-09:
 - Phase 0 dry-run plan: one `VM.Standard.A1.Flex` instance, `2` OCPUs, `12` GB memory, `50` GB boot volume, one public IPv4, SSH CIDR limited to caller IP.
 - Dry run completed without creating resources using `PAYGUARD_SSH_PUBLIC_KEY="$HOME/.ssh/astral_oci.pub" ./infra/oci/provision.sh --dry-run`.
 - Local-only start chosen after the user reiterated the `$0` constraint. No OCI resources have been created.
+- ML/AI learning setup is local-only. No paid cloud resources, GPUs, hosted notebooks, or managed AI services have been activated.
 
 Source:
 
