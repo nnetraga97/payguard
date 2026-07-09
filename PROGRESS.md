@@ -22,6 +22,9 @@ Milestone 0.1: prove zero-cost OCI constraints, then scaffold the local repo str
 - Added Phase 0 payments and infrastructure notes under `docs/`.
 - Ran shell syntax checks for `infra/oci/provision.sh` and `infra/oci/teardown.sh`.
 - Ran dry-run verification with `PAYGUARD_SSH_PUBLIC_KEY="$HOME/.ssh/astral_oci.pub" ./infra/oci/provision.sh --dry-run`; no OCI resources were created.
+- Started with the no-spend path by leaving OCI unprovisioned and scaffolding the local Spring Boot transaction simulator.
+- Added a Maven multi-module root and `apps/transaction-simulator` Spring Boot service with validation, actuator health, and controller tests.
+- Ran `mvn test`; 3 tests passed.
 
 ## Open Review Comments
 
@@ -31,13 +34,13 @@ Milestone 0.1: prove zero-cost OCI constraints, then scaffold the local repo str
 
 ## Next Action
 
-Review and then run the Phase 0 infrastructure script:
+Implement Milestone 0.2 transaction decision rules locally:
 
-1. Re-check official OCI Always Free limits.
-2. Re-run `PAYGUARD_SSH_PUBLIC_KEY="$HOME/.ssh/astral_oci.pub" ./infra/oci/provision.sh --dry-run`.
-3. If the plan is still acceptable, run `PAYGUARD_SSH_PUBLIC_KEY="$HOME/.ssh/astral_oci.pub" ./infra/oci/provision.sh`.
-4. Confirm SSH access to the VM.
-5. Do not proceed to app scaffolding until teardown remains available and tested or manually reviewed.
+1. Read `docs/architecture/milestone-0-2-transaction-decision-rules.md`.
+2. Add deterministic authorization decision rules behind `POST /api/authorizations`.
+3. Add focused tests for approved, declined, and pending-review outcomes.
+4. Run `mvn test`.
+5. Keep OCI dry-run-only until we have fully reviewed public IPv4 and billing behavior.
 
 ## Mentor Questions For The User
 
