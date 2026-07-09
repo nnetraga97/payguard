@@ -22,6 +22,8 @@ Verified on 2026-07-09:
 - Region subscription: `us-sanjose-1`, status `READY`
 - Availability domain: `dgpj:US-SANJOSE-1-AD-1`
 - Official Always Free Ampere A1 allowance: `1,500 OCPU-hours` and `9,000 GB-hours` monthly, equivalent to `2 OCPUs` and `12 GB` for Always Free tenancies.
+- Phase 0 dry-run plan: one `VM.Standard.A1.Flex` instance, `2` OCPUs, `12` GB memory, `50` GB boot volume, one public IPv4, SSH CIDR limited to caller IP.
+- Dry run completed without creating resources using `PAYGUARD_SSH_PUBLIC_KEY="$HOME/.ssh/astral_oci.pub" ./infra/oci/provision.sh --dry-run`.
 
 Source:
 
